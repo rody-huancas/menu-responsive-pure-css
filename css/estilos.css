@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.nav {
+  background-color: #131c28;
+  height: 80px;
+  color: #fff;
+}
+
+.nav__container {
+  display: flex;
+  height: 100%;
+  width: 80%;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo {
+  font-size: 1.5em;
+  font-weight: 900;
+}
+
+.nav__menu {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 3em;
+}
+
+.nav__item {
+  color: #fff;
+  text-decoration: none;
+  --clippy: polygon(0 0, 0 0, 0 100%, 0% 100%);
+}
+
+.nav__item::after {
+  content: "";
+  display: block;
+  background-color: #fff;
+  width: 90%;
+  height: 0.1875rem;
+  margin-top: 0.1875rem;
+  clip-path: var(--clippy);
+  transition: clip-path 0.5s ease;
+  -webkit-transition: clip-path 0.5s ease;
+  -moz-transition: clip-path 0.5s ease;
+  -ms-transition: clip-path 0.5s ease;
+  -o-transition: clip-path 0.5s ease;
+}
+
+.nav__item:hover {
+  --clippy: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.nav__input:checked + .nav__menu {
+  background-color: tomato;
+}
+
+.nav__input,
+.nav__label {
+  display: none;
+}
