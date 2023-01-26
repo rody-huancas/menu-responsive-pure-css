@@ -62,10 +62,44 @@ body {
 }
 
 .nav__input:checked + .nav__menu {
-  background-color: tomato;
+  background-color: #131c28;
 }
 
 .nav__input,
 .nav__label {
   display: none;
+}
+
+@media (max-width: 768px) {
+  .nav__label {
+    display: block;
+    cursor: pointer;
+  }
+
+  .nav__menu {
+    position: fixed;
+    top: 80px;
+    bottom: 0;
+    background-color: #131c28;
+    width: 100%;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    font-weight: 900;
+    font-size: 1.5rem;
+    clip-path: circle(0 at center);
+    transition: clip-path 1s ease-in-out;
+    -webkit-transition: clip-path 1s ease-in-out;
+    -moz-transition: clip-path 1s ease-in-out;
+    -ms-transition: clip-path 1s ease-in-out;
+    -o-transition: clip-path 1s ease-in-out;
+  }
+
+  /* cuando demos click en el menu hamburguesa, el tamaño del clip-path cambiará al 100% */
+  .nav__input:checked + .nav__menu {
+    clip-path: circle(100% at center);
+  }
 }
